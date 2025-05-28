@@ -1,0 +1,435 @@
+@charset "UTF-8";
+
+:root {
+  /* Paleta de colores mejorada */
+  --color-dark-blue: #0b2545;
+  --color-blue: #134074;
+  --color-light-blue: #0077b6;
+  --color-bg: #13315c;
+  --color-accent: #8da9c4;
+  --color-text-light: #f8f9fa;
+  --color-hover: #e9ecef;
+  --color-active: #00b4d8;
+  --color-card: rgba(255, 255, 255, 0.1);
+  
+  /* Variables de diseño mejoradas */
+  --border-radius: 12px;
+  --transition-speed: 0.4s;
+  --box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  --text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  --section-gradient: linear-gradient(135deg, #8da9c4 0%, #b3c7d9 100%);
+}
+
+/* Estilos base mejorados */
+body {
+  background-color: var(--color-bg);
+  background-image: radial-gradient(circle at 10% 20%, rgba(19, 49, 92, 0.9) 0%, rgba(11, 37, 69, 0.95) 90%);
+  font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+  line-height: 1.7;
+  color: var(--color-text-light);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+h1 {
+  color: var(--color-text-light);
+  text-align: center;
+  font-family: 'Montserrat', 'Arial', sans-serif;
+  font-size: 3em;
+  margin: 0.5em 0;
+  text-shadow: var(--text-shadow);
+  letter-spacing: 1.5px;
+  font-weight: 700;
+}
+
+/* Elementos principales mejorados */
+header, nav, section, article, footer {
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  display: block;
+  box-shadow: var(--box-shadow);
+  transition: all var(--transition-speed) ease-out;
+  backdrop-filter: blur(5px);
+}
+
+.agrupar {
+  margin: 0 auto;
+  width: 960px;
+  max-width: 100%;
+  padding: 0 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+/* Encabezado mejorado */
+header {
+  background-color: var(--color-blue);
+  padding: 40px 30px;
+  background-image: linear-gradient(135deg, var(--color-blue) 0%, var(--color-dark-blue) 100%);
+  border-radius: 0 0 var(--border-radius) var(--border-radius);
+  margin-bottom: 30px;
+  position: relative;
+  overflow: hidden;
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+  transform: rotate(30deg);
+  pointer-events: none;
+}
+
+.destacado {
+  font-weight: 600;
+  color: var(--color-text-light);
+  text-align: right;
+  font-size: 1.3em;
+  text-shadow: var(--text-shadow);
+  padding-right: 30px;
+  letter-spacing: 0.5px;
+  position: relative;
+  display: inline-block;
+}
+
+.destacado::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  right: 0;
+  width: 50%;
+  height: 3px;
+  background: var(--color-active);
+  border-radius: 3px;
+}
+
+/* Elemento favorito mejorado */
+#favorito {
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  background-color: var(--color-light-blue);
+  padding: 15px 25px;
+  color: var(--color-text-light);
+  font-size: 1.5em;
+  border-radius: var(--border-radius);
+  margin: 20px auto;
+  max-width: 80%;
+  text-align: center;
+  transition: all var(--transition-speed);
+  font-weight: 500;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+}
+
+#favorito:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 25px rgba(0, 180, 216, 0.4);
+  background-color: var(--color-active);
+}
+
+#favorito::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    to bottom right,
+    rgba(255, 255, 255, 0.3) 0%,
+    rgba(255, 255, 255, 0) 60%
+  );
+  transform: rotate(30deg);
+  pointer-events: none;
+  transition: all 0.7s ease;
+}
+
+#favorito:hover::before {
+  transform: rotate(30deg) translate(20px, 20px);
+}
+
+/* Navegación centrada */
+nav {
+  background-color: var(--color-dark-blue);
+  padding: 20px 0;
+  border-radius: var(--border-radius);
+  margin-bottom: 30px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: left; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+}
+
+nav a {
+  display: inline-flex; /* Usamos flex para mejor alineación */
+  align-items: center; /* Centra el texto verticalmente */
+  justify-content: center; /* Centra el texto horizontalmente */
+  color: var(--color-text-light);
+  padding: 15px 25px;
+  text-decoration: none;
+  font-size: 1.1em;
+  transition: all var(--transition-speed) ease;
+  border-radius: calc(var(--border-radius) - 4px);
+  margin: 0 8px;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  font-weight: 500;
+  position: relative;
+  height: 100%; /* Asegura altura consistente */
+}
+
+/* Los demás estilos se mantienen igual */
+nav a::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--color-active);
+  transition: all var(--transition-speed) ease;
+  transform: translateX(-50%);
+}
+
+nav a:hover {
+  background-color: var(--color-hover);
+  color: var(--color-dark-blue);
+  transform: translateY(-5px);
+}
+
+nav a:hover::before {
+  width: 60%;
+}
+
+nav a.active {
+  background-color: var(--color-active);
+  color: var(--color-text-light);
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0, 180, 216, 0.3);
+}
+
+nav a.active::before {
+  width: 0;
+}
+
+/* Contenido principal mejorado */
+section {
+  flex: 1;
+  min-width: 550px;
+  background: var(--section-gradient);
+  border-radius: var(--border-radius);
+  padding: 30px;
+  color: var(--color-dark-blue);
+  transition: transform var(--transition-speed);
+  position: relative;
+  overflow: hidden;
+}
+
+section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, var(--color-active), var(--color-light-blue));
+}
+
+section h3 {
+  font-size: 1.8em;
+  margin-bottom: 20px;
+  color: var(--color-dark-blue);
+  position: relative;
+  padding-bottom: 10px;
+}
+
+section h3::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: var(--color-active);
+  border-radius: 3px;
+}
+
+section p {
+  font-size: 1.1em;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+aside {
+  width: 250px;
+  background: var(--section-gradient);
+  border-radius: var(--border-radius);
+  padding: 25px;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.1);
+  color: var(--color-dark-blue);
+  transition: transform var(--transition-speed);
+  position: relative;
+}
+
+aside::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, var(--color-light-blue), var(--color-active));
+}
+
+aside a {
+  color: var(--color-dark-blue);
+  font-weight: 600;
+  text-decoration: none;
+  transition: all var(--transition-speed);
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+aside a:hover {
+  color: var(--color-active);
+  transform: translateX(5px);
+}
+
+iframe {
+  border-radius: var(--border-radius);
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-top: 15px;
+  width: 100%;
+  height: 180px;
+}
+
+/* Pie de página mejorado */
+footer {
+  background-color: var(--color-blue);
+  padding: 40px 10px;
+  text-align: center;
+  clear: both;
+  color: var(--color-text-light);
+  background-image: linear-gradient(135deg, var(--color-blue) 0%, var(--color-dark-blue) 100%);
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+  margin-top: 50px;
+}
+
+footer ul {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+footer li {
+  list-style: none;
+  font: bold 1em 'Poppins', sans-serif;
+  padding: 10px;
+  display: inline-block;
+  transition: all var(--transition-speed);
+}
+
+footer li:hover {
+  transform: translateY(-8px) scale(1.1);
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+}
+
+footer img {
+  transition: all var(--transition-speed);
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+}
+
+footer img:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 6px 12px rgba(0, 180, 216, 0.4));
+}
+
+/* Elemento Margen mejorado */
+#Margen {
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  display: inline-block;
+  padding: 20px;
+  border-radius: var(--border-radius);
+  background-color: var(--color-card);
+  backdrop-filter: blur(10px);
+  margin: 20px 0;
+  box-shadow: var(--box-shadow);
+  transition: all var(--transition-speed);
+}
+
+#Margen:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+#Margen img {
+  border-radius: calc(var(--border-radius) - 5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  transition: all var(--transition-speed);
+}
+
+#Margen:hover img {
+  transform: scale(1.02);
+}
+
+/* Efectos hover generales mejorados */
+header:hover, section:hover, aside:hover, footer:hover, nav:hover {
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  transform: translateY(-5px);
+}
+
+/* Responsive mejorado */
+@media (max-width: 1000px) {
+  .agrupar {
+    width: 95%;
+    flex-direction: column;
+  }
+  
+  section, aside {
+    width: 100%;
+    min-width: auto;
+    margin: 0 0 30px 0;
+  }
+  
+  header {
+    padding: 30px 15px;
+  }
+  
+  nav a {
+    padding: 12px 15px;
+    margin: 0 5px;
+    font-size: 1em;
+  }
+  
+  h1 {
+    font-size: 2.2em;
+  }
+}
+
+/* Animaciones */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Añade esta clase a elementos que quieras que floten */
+.floating {
+  animation: float 3s ease-in-out infinite;
+}
