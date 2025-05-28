@@ -35,6 +35,7 @@
 			%>
 		</nav>
 		<section>
+			
 			<%
 				    if (sesion.getAttribute("usuario") == null){   //Se verifica si existe la variable     
 					     %>
@@ -57,5 +58,6 @@
 				    }
 				%>
 		</section>
+		<script> window.onUsersnapLoad = function(api) { api.init(); }; var script = document.createElement('script'); script.defer = 1; script.src = 'https://widget.usersnap.com/global/load/66480ce5-b480-4aa8-bb0d-06f5441226e9?onload=onUsersnapLoad'; document.getElementsByTagName('head')[0].appendChild(script); </script>
 	</body>
 </html>

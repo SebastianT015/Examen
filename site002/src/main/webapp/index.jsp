@@ -17,7 +17,7 @@
 		     <nav>		     	
 		       <a class= "active" href="consulta.jsp">Ver Productos</a>
 		       <a href="categoria.jsp">Buscar Por Categoria</a>
-		       <a href="login.jsp">Login</a>
+		       <a href="login.jsp">Login</a>	
 		       
 		     </nav>
 		     <div class="agrupar">
