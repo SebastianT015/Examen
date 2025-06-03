@@ -151,7 +151,7 @@
                             </div>
                             
                             <div class="d-flex justify-content-between mt-4">
-                                <a href="menuAdministrador.jsp" class="btn btn-outline-secondary">
+                                <a href="menu.jsp" class="btn btn-outline-secondary">
                                     <i class="bi bi-arrow-left me-1"></i> Volver al Menú
                                 </a>
                             </div>

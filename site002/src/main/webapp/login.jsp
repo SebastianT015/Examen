@@ -23,6 +23,21 @@
 		     <div class="agrupar">
 		       <section> 
 		         <h2>Login del sistema</h2>
+		         <%-- Mensajes de error --%>
+				    <% if(request.getParameter("error") != null) { %>
+				        <div class="alert alert-danger mb-3">
+				            <% 
+				                String error = request.getParameter("error");
+				                if("credenciales".equals(error)) {
+				                    out.print("Usuario o contraseña incorrectos");
+				                } else if("bloqueado".equals(error)) {
+				                    out.print("Su cuenta está bloqueada. Contacte al administrador.");
+				                } else if("perfil".equals(error)) {
+				                    out.print("No tiene permisos para acceder.");
+				                }
+				            %>
+				        </div>
+				    <% } %>
 		         <form action ="validarLogin.jsp" method="post">
 			          <table border="1">
 						<tr> <td>Correo Electronico</td> <td><input type="email" id="email" name="usuario" placeholder="usuario@Proveedor.dominio" required />*</td> </tr>
